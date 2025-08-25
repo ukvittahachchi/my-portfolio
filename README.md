@@ -94,13 +94,9 @@ src/
 
 This project is deployed on **Vercel** for optimal performance. The deployment is automated: pushing any changes to the `main` branch triggers a new build and deployment.
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/your-username/your-portfolio/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/ukvittahachchi).
 
 ---
 
@@ -108,9 +104,9 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
 
-- **LinkedIn:** [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
-- **GitHub:** [@your-username](https://github.com/your-username)
-- **Email:** your.email@example.com
+- **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/umindu-kethaka-5b828133a/)
+- **GitHub:** [@your-username]([https://github.com/your-username](https://github.com/ukvittahachchi))
+- **Email:** ukvittahachchi99@gmail.com
 
 ---
 
