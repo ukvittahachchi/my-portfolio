@@ -104,8 +104,8 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
 
-- **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/umindu-kethaka-5b828133a/)
-- **GitHub:** [@your-username]([https://github.com/your-username](https://github.com/ukvittahachchi))
+- **LinkedIn:** (https://www.linkedin.com/in/umindu-kethaka-5b828133a/)
+- **GitHub:** (https://github.com/ukvittahachchi))
 - **Email:** ukvittahachchi99@gmail.com
 
 ---
