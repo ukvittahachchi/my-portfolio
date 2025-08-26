@@ -1,6 +1,6 @@
 // sections/Hero.jsx
 import { useState, useEffect, useRef } from "react";
-import { FaTwitter, FaLinkedin, FaGithub, FaInstagram, FaArrowDown } from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaGithub, FaFacebook, FaArrowDown } from "react-icons/fa";
 import { Link } from "react-scroll";
 import profileImg from "../assets/profile.png"; // replace with your own image
 import profileImgLight from "../assets/profile-dark.png"; // optional: different image for light mode
@@ -248,10 +248,10 @@ export default function Hero() {
                 lightColor: "bg-blue-600" 
               },
               { 
-                icon: <FaInstagram className={darkMode ? "text-white" : "text-white"} />, 
-                url: "https://instagram.com/umindukethaka", 
-                darkColor: "bg-gradient-to-r from-purple-500 to-pink-500", 
-                lightColor: "bg-gradient-to-r from-purple-500 to-pink-500" 
+                icon: <FaFacebook className={darkMode ? "text-white" : "text-white"} />, 
+                url: "https://www.facebook.com/umindu.kethaka.2025/", 
+                darkColor: "bg-blue-800", 
+                lightColor: "bg-blue-700" 
               },
               { 
                 icon: <FaGithub className={darkMode ? "text-white" : "text-white"} />, 

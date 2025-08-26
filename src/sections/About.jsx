@@ -242,7 +242,7 @@ const About = () => {
                 <div className="text-gray-600 dark:text-gray-300 mt-1">Years Experience</div>
               </div>*/}
               <div className="bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-lg text-center">
-                <div className="text-3xl font-bold text-purple-500 dark:text-purple-400">20+</div>
+                <div className="text-3xl font-bold text-purple-500 dark:text-purple-400">10+</div>
                 <div className="text-gray-600 dark:text-gray-300 mt-1">Projects Completed</div>
               </div>
             </div>
