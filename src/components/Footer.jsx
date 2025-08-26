@@ -59,7 +59,7 @@ const Footer = () => {
           {/* Brand section */}
           <div className="text-center md:text-left max-w-md">
             <h3 className="text-2xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-500">
-              Umindu.codes
+              UminduLabs
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Full-Stack Developer creating modern, responsive web applications with cutting-edge technologies.
@@ -117,7 +117,7 @@ const Footer = () => {
         {/* Copyright and credits */}
         <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
           <p className="text-gray-500 dark:text-gray-500 text-sm mb-2 md:mb-0">
-            &copy; {currentYear} Umindu.codes. All rights reserved.
+            &copy; {currentYear} UminduLabs. All rights reserved.
           </p>
           <p className="text-gray-500 dark:text-gray-500 text-sm">
             Designed and built

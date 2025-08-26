@@ -102,7 +102,7 @@ const Navbar = () => {
             offset={-80}
             className="text-xl sm:text-2xl font-bold cursor-pointer bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
           >
-            umindu.codes
+            UminduLabs
           </Link>
 
           {/* Desktop Menu */}
