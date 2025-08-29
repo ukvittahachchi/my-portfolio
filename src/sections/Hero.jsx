@@ -13,7 +13,7 @@ export default function Hero() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [delta, setDelta] = useState(100);
   const [darkMode, setDarkMode] = useState(false);
-  const toRotate = ["Full Stack Developer","Web Developer", "UI/UX Designer"];
+  const toRotate = ["Full Stack Developer","Web Developer", "UI/UX Designer","Frontend Developer"];
 
   useEffect(() => {
     // Check for dark mode preference
