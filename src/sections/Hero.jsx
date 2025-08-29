@@ -2,8 +2,8 @@
 import { useState, useEffect, useRef } from "react";
 import { FaTwitter, FaLinkedin, FaGithub, FaFacebook, FaArrowDown } from "react-icons/fa";
 import { Link } from "react-scroll";
-import profileImg from "../assets/profile.png"; // replace with your own image
-import profileImgLight from "../assets/profile-dark.png"; // optional: different image for light mode
+import profileImg from "../assets/Profile.png"; // replace with your own image
+import profileImgLight from "../assets/Profile-dark.png"; // optional: different image for light mode
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
