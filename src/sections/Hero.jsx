@@ -294,7 +294,7 @@ export default function Hero() {
         </div>
       </Link>
 
-      <style jsx>{`
+      <style jsx="true">{`
         @keyframes pulse-slow {
           0%, 100% { opacity: 0.2; transform: scale(1); }
           50% { opacity: 0.4; transform: scale(1.05); }

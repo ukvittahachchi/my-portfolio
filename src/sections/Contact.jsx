@@ -1,6 +1,7 @@
 // src/sections/Contact.jsx
 import React, { useState, useEffect } from "react";
 import emailjs from 'emailjs-com';
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -43,6 +44,53 @@ const Contact = () => {
       });
   };
 
+  // Animation variants for Framer Motion
+  const floatingVariants = {
+    animate: {
+      y: [0, -20, 0],
+      rotate: [0, 5, 0],
+      transition: {
+        duration: 8,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const pulseVariants = {
+    animate: {
+      scale: [1, 1.05, 1],
+      opacity: [0.5, 0.8, 0.5],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const lineVariants = {
+    animate: {
+      x: ["-100%", "100%"],
+      transition: {
+        duration: 15,
+        repeat: Infinity,
+        ease: "linear"
+      }
+    }
+  };
+
+  const verticalLineVariants = {
+    animate: {
+      y: ["-100%", "100%"],
+      transition: {
+        duration: 20,
+        repeat: Infinity,
+        ease: "linear"
+      }
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -60,40 +108,153 @@ const Contact = () => {
           }}></div>
         </div>
         
-        {/* Animated floating elements */}
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full animate-float-slow"></div>
-        <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-purple-500/10 rounded-lg animate-float-medium"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-56 h-56 bg-cyan-500/10 rounded-lg animate-float-slow"></div>
+        {/* Animated floating elements with Framer Motion */}
+        <motion.div 
+          className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full"
+          variants={floatingVariants}
+          animate="animate"
+        ></motion.div>
         
-        {/* Animated gradient orbs */}
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full mix-blend-overlay dark:mix-blend-soft-light filter blur-3xl opacity-70 animate-pulse-slow"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full mix-blend-overlay dark:mix-blend-soft-light filter blur-3xl opacity-70 animate-pulse-medium"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full mix-blend-overlay dark:mix-blend-soft-light filter blur-3xl opacity-50 animate-pulse-slow"></div>
+        <motion.div 
+          className="absolute top-1/3 right-1/4 w-48 h-48 bg-purple-500/10 rounded-lg"
+          variants={floatingVariants}
+          animate="animate"
+          transition={{ duration: 12 }}
+        ></motion.div>
         
-        {/* Animated lines */}
+        <motion.div 
+          className="absolute bottom-1/4 left-1/3 w-56 h-56 bg-cyan-500/10 rounded-lg"
+          variants={floatingVariants}
+          animate="animate"
+          transition={{ duration: 15 }}
+        ></motion.div>
+        
+        {/* Animated gradient orbs with Framer Motion */}
+        <motion.div 
+          className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full mix-blend-overlay dark:mix-blend-soft-light filter blur-3xl opacity-70"
+          variants={pulseVariants}
+          animate="animate"
+        ></motion.div>
+        
+        <motion.div 
+          className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full mix-blend-overlay dark:mix-blend-soft-light filter blur-3xl opacity-70"
+          variants={pulseVariants}
+          animate="animate"
+          transition={{ duration: 6 }}
+        ></motion.div>
+        
+        <motion.div 
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full mix-blend-overlay dark:mix-blend-soft-light filter blur-3xl opacity-50"
+          variants={pulseVariants}
+          animate="animate"
+          transition={{ duration: 8 }}
+        ></motion.div>
+        
+        {/* Animated lines with Framer Motion */}
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent animate-line-horizontal"></div>
-          <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent animate-line-horizontal" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent animate-line-horizontal" style={{animationDelay: '4s'}}></div>
+          <motion.div 
+            className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"
+            variants={lineVariants}
+            animate="animate"
+          ></motion.div>
           
-          <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-blue-500/30 to-transparent animate-line-vertical"></div>
-          <div className="absolute left-1/3 top-0 h-full w-px bg-gradient-to-b from-transparent via-purple-500/30 to-transparent animate-line-vertical" style={{animationDelay: '1.5s'}}></div>
-          <div className="absolute left-2/3 top-0 h-full w-px bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent animate-line-vertical" style={{animationDelay: '3s'}}></div>
+          <motion.div 
+            className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"
+            variants={lineVariants}
+            animate="animate"
+            transition={{ delay: 2, duration: 15 }}
+          ></motion.div>
+          
+          <motion.div 
+            className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"
+            variants={lineVariants}
+            animate="animate"
+            transition={{ delay: 4, duration: 15 }}
+          ></motion.div>
+          
+          <motion.div 
+            className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-blue-500/30 to-transparent"
+            variants={verticalLineVariants}
+            animate="animate"
+          ></motion.div>
+          
+          <motion.div 
+            className="absolute left-1/3 top-0 h-full w-px bg-gradient-to-b from-transparent via-purple-500/30 to-transparent"
+            variants={verticalLineVariants}
+            animate="animate"
+            transition={{ delay: 1.5, duration: 20 }}
+          ></motion.div>
+          
+          <motion.div 
+            className="absolute left-2/3 top-0 h-full w-px bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent"
+            variants={verticalLineVariants}
+            animate="animate"
+            transition={{ delay: 3, duration: 20 }}
+          ></motion.div>
         </div>
+
+        {/* Particle animation system */}
+        {[...Array(30)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 rounded-full bg-blue-500/20"
+            initial={{
+              x: `${Math.random() * 100}%`,
+              y: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              x: [
+                `${Math.random() * 100}%`,
+                `${Math.random() * 100}%`,
+                `${Math.random() * 100}%`
+              ],
+              y: [
+                `${Math.random() * 100}%`,
+                `${Math.random() * 100}%`,
+                `${Math.random() * 100}%`
+              ],
+            }}
+            transition={{
+              duration: Math.random() * 20 + 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+        ))}
       </div>
 
-      <div className={`relative z-10 w-full max-w-4xl mx-auto transition-all duration-700 ease-out transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+      <motion.div 
+        className="relative z-10 w-full max-w-4xl mx-auto"
+        initial={{ y: 50, opacity: 0 }}
+        animate={isVisible ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mb-4">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mb-4"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={isVisible ? { scale: 1, opacity: 1 } : { scale: 0.9, opacity: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
             Get In Touch
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+            initial={{ y: 20, opacity: 0 }}
+            animate={isVisible ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
             Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
-          </p>
+          </motion.p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-10">
-          <div className="lg:w-2/5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-white/20 dark:border-gray-700/30">
+          <motion.div 
+            className="lg:w-2/5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-white/20 dark:border-gray-700/30"
+            initial={{ x: -50, opacity: 0 }}
+            animate={isVisible ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
             <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">Contact Information</h3>
             
             <div className="space-y-6">
@@ -158,13 +319,22 @@ const Contact = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="lg:w-3/5">
+          <motion.div 
+            className="lg:w-3/5"
+            initial={{ x: 50, opacity: 0 }}
+            animate={isVisible ? { x: 0, opacity: 1 } : { x: 50, opacity: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+          >
             <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-white/20 dark:border-gray-700/30">
               {/* Status Messages */}
               {submitStatus === "success" && (
-                <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-300 rounded-lg flex items-start">
+                <motion.div 
+                  className="mb-6 p-4 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-300 rounded-lg flex items-start"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -172,11 +342,15 @@ const Contact = () => {
                     <p className="font-medium">Message sent successfully!</p>
                     <p className="text-sm mt-1">I'll get back to you within 24 hours.</p>
                   </div>
-                </div>
+                </motion.div>
               )}
               
               {submitStatus === "error" && (
-                <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 rounded-lg flex items-start">
+                <motion.div 
+                  className="mb-6 p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 rounded-lg flex items-start"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -184,12 +358,16 @@ const Contact = () => {
                     <p className="font-medium">There was an error sending your message.</p>
                     <p className="text-sm mt-1">Please try again or email me directly at your-email@example.com</p>
                   </div>
-                </div>
+                </motion.div>
               )}
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    transition={{ delay: 0.6 }}
+                  >
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -209,9 +387,13 @@ const Contact = () => {
                         disabled={isSubmitting}
                       />
                     </div>
-                  </div>
+                  </motion.div>
                   
-                  <div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    transition={{ delay: 0.7 }}
+                  >
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -231,10 +413,14 @@ const Contact = () => {
                         disabled={isSubmitting}
                       />
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
                 
-                <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  transition={{ delay: 0.8 }}
+                >
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
                   <div className="relative">
                     <div className="absolute top-3 left-3 pointer-events-none">
@@ -254,12 +440,17 @@ const Contact = () => {
                       disabled={isSubmitting}
                     ></textarea>
                   </div>
-                </div>
+                </motion.div>
                 
-                <button
+                <motion.button
                   type="submit"
                   className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-800 flex items-center justify-center disabled:opacity-75 disabled:transform-none shadow-md hover:shadow-lg"
                   disabled={isSubmitting}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  transition={{ delay: 0.9 }}
                 >
                   {isSubmitting ? (
                     <>
@@ -277,70 +468,12 @@ const Contact = () => {
                       </svg>
                     </>
                   )}
-                </button>
+                </motion.button>
               </form>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
-
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0) rotate(0deg);
-          }
-          33% {
-            transform: translateY(-20px) rotate(3deg);
-          }
-          66% {
-            transform: translateY(10px) rotate(-3deg);
-          }
-        }
-        @keyframes pulse {
-          0%, 100% {
-            opacity: 0.5;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.8;
-            transform: scale(1.05);
-          }
-        }
-        @keyframes lineHorizontal {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
-        }
-        @keyframes lineVertical {
-          0% {
-            transform: translateY(-100%);
-          }
-          100% {
-            transform: translateY(100%);
-          }
-        }
-        .animate-float-slow {
-          animation: float 15s ease-in-out infinite;
-        }
-        .animate-float-medium {
-          animation: float 12s ease-in-out infinite;
-        }
-        .animate-pulse-slow {
-          animation: pulse 8s ease-in-out infinite;
-        }
-        .animate-pulse-medium {
-          animation: pulse 6s ease-in-out infinite;
-        }
-        .animate-line-horizontal {
-          animation: lineHorizontal 15s linear infinite;
-        }
-        .animate-line-vertical {
-          animation: lineVertical 20s linear infinite;
-        }
-      `}</style>
+      </motion.div>
     </section>
   );
 };
