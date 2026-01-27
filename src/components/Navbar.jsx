@@ -1,6 +1,6 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
-import resume from "../assets/U.K. Vittahachchi.pdf";
+import resume from "../assets/Umindu Kethaka Resume.pdf";
 import { Link } from "react-scroll";
 import DarkModeToggle from "./DarkModeToggle";
 import {
